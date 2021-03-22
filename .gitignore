@@ -1,3 +1,6 @@
+# Custom Apple folder attributes
+.DS_Store
+
 # Logs
 logs
 *.log
