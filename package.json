@@ -1,0 +1,23 @@
+{
+  "name": "09-Node.js-README-Generator",
+  "version": "1.0.0",
+  "description": "09 Node.js Homework: Professional README Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonesjsc/09-Node.js-README-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonesjsc/09-Node.js-README-Generator/issues"
+  },
+  "homepage": "https://github.com/jonesjsc/09-Node.js-README-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
