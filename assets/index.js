@@ -1,7 +1,7 @@
 // title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 const inquirer = require('inquirer');
 var fs = require('fs');
-const mdFile = 'SOMETHING.md';
+const mdFile = 'README.md';
 
 function init () {
 
@@ -17,7 +17,6 @@ function init () {
   } catch(err) {
     console.error(err)
   }
-
 }
 
 function appendToFile(fileName,whatToAppend) {
@@ -25,41 +24,9 @@ function appendToFile(fileName,whatToAppend) {
     if (err) throw err;
     console.log('Saved!');
   });
-
 }
+
 init();
-
-
-// inquirer
-// .prompt([
-//   {
-//     type: 'checkbox',
-//     message: 'Which optional sections do you want to complete',
-//     name: 'sections',
-//     choices: [
-//       // new inquirer.Separator(' == TOP OF README.MD == '),
-//       // { name: '[1] Title',   short: '1', value: 'Title', checked: true },
-//       // { name: '[2] Description',   short: '2', value: 'Description', checked: true },
-//       { name: '[1] Table of Contents', short: '3', value: 'TOC', checked: false },
-//       { name: '[2] Installation',  short: '4', value: 'Installation', checked: false },
-//       { name: '[3] Usage',  short: '5', value: 'Usage', checked: false },
-//       { name: '[4] License',  short: '6', value: 'License', checked: true },
-//       { name: '[5] Contributing',  short: '7', value: 'Contributing', checked: false },
-//       { name: '[6] Tests',  short: '8', value: 'Tests', checked: false },
-//       { name: '[7] Questions',  short: '9', value: 'Questions', checked: false },
-//     ]
-//   }
-// ])
-// .then((answers) => {
-//   // readmeSectionList = answers;
-//   let readmeSectionList = JSON.stringify(answers, null, '  ');
-//   readmeSectionList.unshift('Description');
-//   readmeSectionList.unshift('Title');
-  
-//   console.log(readmeSectionList);
-// });
-
-
 
 inquirer
   .prompt([
@@ -155,17 +122,6 @@ ${response.test}
 ${response.questions}
 `
       );
-    // appendToFile(mdFile,"## Description\n"+response.description);
-    // appendToFile(mdFile,"## Installation Instructions\n"+response.installInstructions);
-    // appendToFile(mdFile,"## Usage\n"+response.usage);
-    // console.log(response.title);
-    // console.log(response.description);
-    // console.log(response.installInstructions);
-    // console.log(response.usage);
-    // console.log(response.license);
-    // console.log(response.contributing);
-    // console.log(response.test);
-    // console.log(response.questions);
   });
 
   
