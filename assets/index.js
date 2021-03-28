@@ -4,23 +4,29 @@ var fs = require('fs');
 const mdFile = 'SOMETHING.md';
 
 function init () {
-// import { unlink } from 'fs';
 
-try {
-  if (fs.existsSync(mdFile)) {
-    //file exists
-    console.log(mdFile+" exists - will overwrite");
+  try {
+    if (fs.existsSync(mdFile)) {
+      //file exists
+      console.log(mdFile+" exists - will overwrite");
+      fs.unlink(mdFile, (err) => {
+        if (err) throw err;
+        console.log(mdFile+' was deleted');
+      });
+    }
+  } catch(err) {
+    console.error(err)
   }
-} catch(err) {
-  console.error(err)
+
 }
 
-fs.unlink(mdFile, (err) => {
-  if (err) throw err;
-  console.log(mdFile+' was deleted');
-});
-}
+function appendToFile(fileName,whatToAppend) {
+  fs.appendFile(fileName, whatToAppend+"\n", function (err) {
+    if (err) throw err;
+    console.log('Saved!');
+  });
 
+}
 init();
 
 
@@ -115,20 +121,33 @@ inquirer
     },
   ])
   .then((response) => {
-    console.log(response);
-    fs.appendFile(mdFile, `# ${response.title}`, function (err) {
-      if (err) throw err;
-      console.log('Saved!');
-    });
-    renderReadme(1,response.title);
-    renderReadme(2,response.description);
-    renderReadme(2,response.installInstructions);
-    renderReadme(2,response.usage);
-    renderReadme('license',response.license);
-    renderReadme(2,response.contributing);
-    renderReadme(2,response.test);
-    renderReadme(2,response.questions);
-
+    appendToFile(mdFile,`# ${response.title}
+## Description
+${response.description}
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+## Installation
+${response.installInstructions}
+## Usage
+${response.usage}
+## License
+${response.license}
+## Contributing 
+${response.contributing}
+## Tests 
+${response.test}
+## Questions
+${response.questions}
+`
+      );
+    // appendToFile(mdFile,"## Description\n"+response.description);
+    // appendToFile(mdFile,"## Installation Instructions\n"+response.installInstructions);
+    // appendToFile(mdFile,"## Usage\n"+response.usage);
     // console.log(response.title);
     // console.log(response.description);
     // console.log(response.installInstructions);
@@ -139,7 +158,4 @@ inquirer
     // console.log(response.questions);
   });
 
-  function renderReadme (level,text) {
-    console.log ("renderReadme called with level "+level);
-    console.log ("renderReadme called with text "+text);
-  }
+  
