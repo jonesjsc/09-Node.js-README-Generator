@@ -1,6 +1,6 @@
-# My Fantastic Title
+# My Super Duper Fancy Pants title
 ## Description
-this is a description
+this is a description here
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
@@ -9,15 +9,15 @@ this is a description
 - [Tests](#tests)
 - [Questions](#questions)
 ## Installation
-here how to install
+heres how to install this sucker
 ## Usage
-usage insturctions here
+usage directions
 ## License
-Unlicense
+6
 ## Contributing 
-none
+ass
 ## Tests 
-no jest tests yet
+test
 ## Questions
 jason.e.jones@gmail.com
 
