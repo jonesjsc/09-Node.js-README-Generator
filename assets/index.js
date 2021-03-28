@@ -1,4 +1,3 @@
-// title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 const inquirer = require('inquirer');
 var fs = require('fs');
 const mdFile = 'README.md';
@@ -8,10 +7,8 @@ function init () {
   try {
     if (fs.existsSync(mdFile)) {
       //file exists
-      console.log(mdFile+" exists - will overwrite");
       fs.unlink(mdFile, (err) => {
         if (err) throw err;
-        console.log(mdFile+' was deleted');
       });
     }
   } catch(err) {

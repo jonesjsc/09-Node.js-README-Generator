@@ -1,6 +1,6 @@
-# My Super Duper Fancy Pants title
+# Project Title
 ## Description
-this is a description here
+description
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
@@ -9,15 +9,15 @@ this is a description here
 - [Tests](#tests)
 - [Questions](#questions)
 ## Installation
-heres how to install this sucker
+How to install 
 ## Usage
-usage directions
+How to use
 ## License
-6
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 ## Contributing 
-ass
+none
 ## Tests 
-test
+none
 ## Questions
 jason.e.jones@gmail.com
 
